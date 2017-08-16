@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">车易行</string>
+
+    <string name="first_btn">车行</string>
+    <string name="second_btn">发现</string>
+    <string name="third_btn">个人</string>
+
+</resources>
