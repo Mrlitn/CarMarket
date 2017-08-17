@@ -7,4 +7,5 @@ package com.market.activity;
 public class Windows {
     private String name;
     private int age;
+
 }
