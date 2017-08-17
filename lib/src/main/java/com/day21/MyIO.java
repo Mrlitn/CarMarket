@@ -44,7 +44,7 @@ public class MyIO {
     public static void demo1() {
         try {
             FileWriter fw = new FileWriter("a.txt");
-            fw.write("我不是什么好人11~");
+            fw.write("我不是什么好人~");
             fw.write(97);
             fw.close();
         } catch (IOException e) {
@@ -147,7 +147,7 @@ public class MyIO {
                 fw.write(times + "");
                 fw.close();
             } else {
-                System.out.print("请购买正版软件！");
+                System.out.print("请购买正版软件！！");
             }
 
             br.close();
