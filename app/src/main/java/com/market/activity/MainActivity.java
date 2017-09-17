@@ -58,6 +58,7 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String s = "\n" +
                 "    {\"age\":11,\"name\":\"li\"}";
         Gson gson = new Gson();
@@ -111,6 +112,7 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
         buyCarFragment = new BuyCarFragment();
         secondCarFragment = new SecondCarFragment();
         myFragment = new MyFragment();
+
         fragments = new Fragment[]{buyCarFragment, secondCarFragment, myFragment};
 
         FragmentManager fragmentManager = getSupportFragmentManager();

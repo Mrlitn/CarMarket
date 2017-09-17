@@ -68,6 +68,28 @@ public class MyMap {
         hm.put(new Student("cc", 33), "hb");
         hm.put(new Student("dd", 44), "zj");
 
+        Set<Map.Entry<Student, String>> entries = hm.entrySet();
+        Iterator<Map.Entry<Student, String>> iterator1 = entries.iterator();
+        while (iterator1.hasNext()){
+            Map.Entry<Student, String> next = iterator1.next();
+            Student key = next.getKey();
+            String value = next.getValue();
+
+        }
+
+
+        Set<Student> students = hm.keySet();
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()){
+            Student next = iterator.next();
+            int age = next.getAge();
+            String name = next.getName();
+        }
+
+        for (Student s :hm.keySet()){
+
+        }
+
         System.out.println(hm);
     }
 

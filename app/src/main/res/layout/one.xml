@@ -41,11 +41,11 @@
         android:layout_height="150dp"
         android:layout_below="@id/title">
 
-        <TextView
+
+        <com.ryane.banner_lib.AdPlayBanner
+            android:id="@+id/ad_banner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="这个是5个轮播图" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

@@ -14,6 +14,7 @@ public class MyArrays {
         System.out.println(i);
     }
 
+
     //动态初始化
     public static void array() {
         //数组是存储同种数据类型的多个值,可以存储基本数据类型和引用数据类型
