@@ -3,6 +3,7 @@ package com.market.views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -22,9 +23,7 @@ public class TestView extends View {
 
     public TestView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
 //        TypedArray ta = context.getTheme().obtainStyledAttributes(attrs, R)
-
     }
 
     //step1:会在初始化之后调用一到多次来测量控件或其中的子控件的宽高；
@@ -45,6 +44,9 @@ public class TestView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Paint paint = new Paint();
+        canvas.drawRect(10.0f, 10.0f, 20.0f, 30.0f, paint);
+        canvas.save();
 
         /**
          * 1)  drawArc()：绘制圆弧；

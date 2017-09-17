@@ -19,13 +19,13 @@ public class HttpTools {
     public static String getUrl() throws IOException {
         Request request = new Request.Builder()
                 .url(onLine_URL).build();
+
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
 
     public static String postUrl() throws IOException {
 //        RequestBody body = RequestBody.create()
-
         return "";
     }
 

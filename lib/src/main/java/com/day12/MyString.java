@@ -49,9 +49,11 @@ public class MyString {
     public static void demo4() {
         //遍历字符串
         String s = "abcdefg";
+
         for (int i = 0; i < s.length(); i++) {
             System.out.print(s.charAt(i));
         }
+
     }
 
     public static void demo5() {

@@ -57,6 +57,7 @@ public class MyStringBuffer {
 
     //选择排序  每次比较出一个最小值
     public static void selectSort(int[] arr) {
+        //
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -66,6 +67,7 @@ public class MyStringBuffer {
                 }
             }
         }
+
     }
 
     public static void print(int arr[]) {

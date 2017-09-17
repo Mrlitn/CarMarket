@@ -7,7 +7,7 @@ package com.day9;
 public class MyTest {
 
     public static void main(String[] args) {
-
+        
     }
 
 }
@@ -82,6 +82,7 @@ class JumpCat extends CatTest implements Jump {
     public void jump() {
 
     }
+
 }
 
 

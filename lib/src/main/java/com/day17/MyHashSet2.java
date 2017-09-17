@@ -16,16 +16,17 @@ import java.util.TreeSet;
 public class MyHashSet2 {
 
     public static void main(String[] args) {
-        ArrayList<String> al = new ArrayList<>();
-        al.add("aa");
-        al.add("aa");
-        al.add("bb");
-        al.add("bb");
-        al.add("dd");
-        al.add("cc");
-
-        demo7(al);
-        System.out.println(al);
+//        ArrayList<String> al = new ArrayList<>();
+//        al.add("aa");
+//        al.add("aa");
+//        al.add("bb");
+//        al.add("bb");
+//        al.add("dd");
+//        al.add("cc");
+//
+//        demo7(al);
+//        System.out.println(al);
+        demo6();
     }
 
     //Set集合 无序 无索引 无重复

@@ -29,6 +29,7 @@ public class MyInter {
 }
 
 class Outers {
+
     public static Innters methed() {
         return new Innters() {
             @Override
@@ -37,6 +38,7 @@ class Outers {
             }
         };
     }
+
 }
 
 interface Innters {
@@ -75,6 +77,7 @@ class Outer {
                 System.out.println("print4" + i);
             }
         }
+
     }
 
     class Inter4 implements Innters {
@@ -90,6 +93,7 @@ class Outer {
 
 //        Inter4 i4 = new Inter4();
 //        i4.print();
+
         //匿名内部类最好只有一个方法使用
         new Innters() {
             @Override

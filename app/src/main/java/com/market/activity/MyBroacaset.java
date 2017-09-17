@@ -16,4 +16,5 @@ public class MyBroacaset extends BroadcastReceiver {
         String name = intent.getStringExtra("name");
         Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
     }
+
 }

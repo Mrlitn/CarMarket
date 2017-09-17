@@ -47,6 +47,7 @@ class Animal {
     public void eat() {
         System.out.println("eat");
     }
+
 }
 
 class Dog extends Animal {

@@ -62,7 +62,6 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
                 "    {\"age\":11,\"name\":\"li\"}";
         Gson gson = new Gson();
         First first = gson.fromJson(s, First.class);
-
         Toast.makeText(this, first.getName(), Toast.LENGTH_SHORT).show();
 
         initView();

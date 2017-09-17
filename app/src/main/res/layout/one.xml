@@ -7,8 +7,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="#00fff0"
-        android:orientation="horizontal">
+        android:background="#00fff0">
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,24 +35,41 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/ad_img"
+        android:id="@+id/ll_ad"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@id/title">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/ad_page"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
 
         <TextView
+            android:id="@+id/ad_txt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="这个是5个轮播图" />
+            android:layout_height="wrap_content"
+            android:background="#44000000"
+            android:gravity="center_horizontal"
+            android:text="333"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
 
+        <LinearLayout
+            android:id="@+id/ll_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/four_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/ad_img"
+        android:layout_below="@id/ll_ad"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
@@ -94,6 +110,11 @@
             android:layout_marginLeft="50dp"
             android:gravity="center"
             android:text="汽车头条" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/tab1_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <TextView
             android:layout_width="match_parent"
@@ -159,7 +180,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
