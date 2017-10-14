@@ -10,11 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.market.activity.SearchActivity;
+import com.market.adapter.TabCarsNameAdapter;
 import com.market.adapter.TabOneAdAdapter;
+import com.market.bean.CarsNameList;
 import com.market.tools.BaseFragment;
+import com.market.tools.PinYinUtils;
+import com.market.views.IndexViews;
 
 import java.util.ArrayList;
 
@@ -27,20 +32,23 @@ import main.java.com.carmarket.R;
 
 public class BuyCarFragment extends BaseFragment implements View.OnClickListener {
     private View view;
-    private TextView tab1_search, ad_txt;
+    private TextView tab1_search, ad_txt, touchcar;
 
     private ViewPager ad_page;
     private LinearLayout ll_point;
-    private TabOneAdAdapter adapter;
     private ArrayList<ImageView> arrayList;
     private int prePosition = 0;
     private boolean isDragging = false;
+    private ListView cars_listview;
+    private IndexViews indexviews;
+    private TabCarsNameAdapter nameAdapter;
+    private Handler handlers = new Handler();
 
     private int[] ad_imgs = {
             R.mipmap.ic_launcher, R.mipmap.ic_launcher,
             R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
-    private String[] ad_txts = {"img1", "img2", "img3", "img4", "img5"};
+    private String[] ad_txts = {"广告_1", "广告_2", "广告_3", "广告_4", "广告_5"};
 
     private Handler handler = new Handler() {
 
@@ -70,11 +78,34 @@ public class BuyCarFragment extends BaseFragment implements View.OnClickListener
 
     public void initView() {
         tab1_search = (TextView) view.findViewById(R.id.tab1_search);
+        cars_listview = (ListView) view.findViewById(R.id.cars_listview);
+        indexviews = (IndexViews) view.findViewById(R.id.indexviews);
 
+        touchcar = (TextView) view.findViewById(R.id.touchcar);
         ad_txt = (TextView) view.findViewById(R.id.ad_txt);
         ad_page = (ViewPager) view.findViewById(R.id.ad_page);
         ll_point = (LinearLayout) view.findViewById(R.id.ll_point);
         ad_txt.setText(ad_txts[prePosition]);
+
+        nameAdapter = new TabCarsNameAdapter(getActivity());
+        cars_listview.setAdapter(nameAdapter);
+
+        indexviews.setLister(new IndexViews.OnTouchIndexLister() {
+            @Override
+            public void show(String word) {
+                touchcar.setVisibility(View.VISIBLE);
+                touchcar.setText(word);
+                handlers.removeCallbacksAndMessages(true);
+                handlers.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        touchcar.setVisibility(View.GONE);
+                    }
+                }, 1000);
+
+                updateListView(word);
+            }
+        });
 
         arrayList = new ArrayList<>();
 
@@ -136,16 +167,26 @@ public class BuyCarFragment extends BaseFragment implements View.OnClickListener
 
     }
 
+    ArrayList<String> listNames = new CarsNameList().getListNames();
+
+    private void updateListView(String word) {
+        for (int i = 0; i < listNames.size(); i++) {
+            String s = PinYinUtils.getPinYin(listNames.get(i).toUpperCase()).substring(0, 1);
+            if (word.equals(s)) {
+                cars_listview.setSelection(i);
+                return;
+            }
+        }
+    }
+
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.tab1_search:
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
                 break;
         }
-
     }
 
 }

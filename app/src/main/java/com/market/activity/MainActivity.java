@@ -1,6 +1,5 @@
 package com.market.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,10 +38,13 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
     private TextView content, tab1, tab2, tab3;
     private int index, currentIndex;
 
+    private boolean exit = false;
+
     private Handler handler = new Handler() {
+
         @Override
-        public void dispatchMessage(Message msg) {
-            super.dispatchMessage(msg);
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
                     String s = (String) msg.obj;
@@ -49,7 +52,9 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
                     First first = gson.fromJson(s, First.class);
                     content.setText(s);
                     break;
-
+                case 2:
+                    exit = false;
+                    break;
             }
         }
     };
@@ -58,6 +63,7 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String s = "\n" +
                 "    {\"age\":11,\"name\":\"li\"}";
         Gson gson = new Gson();
@@ -67,28 +73,6 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
         initView();
         allFragments();
 
-    }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-
-        return super.dispatchTouchEvent(ev);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        int action = event.getAction();
-
-        switch (action) {
-            case MotionEvent.ACTION_DOWN:
-
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-
-                break;
-        }
-        return super.onTouchEvent(event);
     }
 
     //初始化组件
@@ -104,6 +88,7 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
         tab1.setOnClickListener(this);
         tab2.setOnClickListener(this);
         tab3.setOnClickListener(this);
+
     }
 
     public void allFragments() {
@@ -140,6 +125,7 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.tab1:
                 index = 0;
@@ -198,6 +184,19 @@ public class MainActivity extends FragmentActivity implements View.OnTouchListen
         }
 
         return true;
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if (!exit) {
+                exit = true;
+                Toast.makeText(MainActivity.this, "再按一次就退出程序", Toast.LENGTH_SHORT).show();
+                handler.sendEmptyMessageDelayed(2, 2000);
+                return true;
+            }
+        }
+        return super.onKeyUp(keyCode, event);
     }
 
 }

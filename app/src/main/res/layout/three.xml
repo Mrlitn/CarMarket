@@ -1,73 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/tab3_user"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#00fff0">
 
-        <ImageView
-            android:id="@+id/tab3_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <com.market.views.CircleImage
+            android:id="@+id/tab3_usertitle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="#ffffff"
+            android:src="@mipmap/img" />
 
         <TextView
+            android:id="@+id/tab3_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/tab3_img"
+            android:layout_toRightOf="@id/tab3_usertitle"
             android:text="我是好人~"
             android:textColor="#ffffff" />
 
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/tab3_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_user"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="购车城市：       北京" />
 
     <TextView
+        android:id="@+id/tab3_carname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_city"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="目标车型：       丰田" />
 
     <TextView
+        android:id="@+id/tab3_collect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_carname"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="车型收藏" />
+        android:text="车型收藏:" />
 
     <TextView
+        android:id="@+id/tab3_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_collect"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="用户反馈" />
+        android:text="用户反馈:" />
 
     <TextView
+        android:id="@+id/tab3_joinus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_feedback"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="经销商加盟" />
+        android:text="经销商加盟:" />
 
     <TextView
+        android:id="@+id/tab3_aboutus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tab3_joinus"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="关于我们" />
+        android:text="关于我们:" />
 
-</LinearLayout>
+</RelativeLayout>

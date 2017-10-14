@@ -35,6 +35,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_below="@id/title"
         android:id="@+id/ll_ad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,6 +126,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/car_names"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/news"
@@ -178,8 +180,31 @@
                 android:text="宝马" />
 
         </LinearLayout>
-
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/cars_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/car_names" />
+
+    <TextView
+        android:id="@+id/touchcar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:visibility="gone" />
+
+    <com.market.views.IndexViews
+        android:id="@+id/indexviews"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:background="#ff00ff" />
 
 </RelativeLayout>

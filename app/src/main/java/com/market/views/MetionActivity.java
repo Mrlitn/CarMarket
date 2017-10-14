@@ -15,7 +15,7 @@ public class MetionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.motionactivity);
+//        setContentView(R.layout.motionactivity);
 
     }
 

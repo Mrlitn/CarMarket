@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.market.activity.MainActivity">
+        <activity
+            android:name="com.market.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,14 +25,23 @@
 
         <activity
             android:name="com.market.activity.TwoActivity"
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.market.activity.ThreeActivity"></activity>
-        <activity android:name="com.market.activity.SearchActivity"></activity>
+        <activity
+            android:name="com.market.activity.ThreeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.market.activity.SearchActivity"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.market.activity.FourActivity"></activity>
+        <activity
+            android:name="com.market.activity.FourActivity"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.market.views.MetionActivity"></activity>
+        <activity
+            android:name="com.market.views.MetionActivity"
+            android:screenOrientation="portrait"></activity>
 
         <service android:name="com.market.activity.oneService"></service>
 
