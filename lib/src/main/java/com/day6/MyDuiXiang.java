@@ -8,7 +8,14 @@ package com.day6;
 public class MyDuiXiang {
 
     public static void main(String args[]) {
+        int[] arr = new int[4];
 
+        int[] arr1 = {1,2,3};
+
+
+        Person[] p = new Person[4];
+
+        Person[] p1 = {new Person()};
         demo(1);
     }
 

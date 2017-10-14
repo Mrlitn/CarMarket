@@ -7,7 +7,8 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="#00fff0">
+        android:background="#00fff0"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,42 +36,24 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_below="@id/title"
-        android:id="@+id/ll_ad"
+        android:id="@+id/ad_img"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="150dp"
+        android:layout_below="@id/title">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/ad_page"
+
+        <com.ryane.banner_lib.AdPlayBanner
+            android:id="@+id/ad_banner"
             android:layout_width="match_parent"
-            android:layout_height="180dp" />
+            android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/ad_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#44000000"
-            android:gravity="center_horizontal"
-            android:text="333"
-            android:textColor="#ffffff"
-            android:textSize="10dp" />
-
-        <LinearLayout
-            android:id="@+id/ll_point"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
-
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/four_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/ll_ad"
+        android:layout_below="@id/ad_img"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
@@ -112,11 +95,6 @@
             android:gravity="center"
             android:text="汽车头条" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/tab1_recycle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -126,7 +104,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/car_names"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/news"
@@ -180,31 +157,9 @@
                 android:text="宝马" />
 
         </LinearLayout>
+
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/cars_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/car_names" />
 
-    <TextView
-        android:id="@+id/touchcar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_centerInParent="true"
-        android:background="#ff0000"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:visibility="gone" />
-
-    <com.market.views.IndexViews
-        android:id="@+id/indexviews"
-        android:layout_width="20dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:background="#ff00ff" />
 
 </RelativeLayout>

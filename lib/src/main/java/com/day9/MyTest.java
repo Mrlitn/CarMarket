@@ -1,16 +1,55 @@
 package com.day9;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.zip.GZIPOutputStream;
+
 /**
  * Created by litienan on 2017/7/19.
  */
 
 public class MyTest {
-
+    String str = new String("good");
+    char[] ch = {'a','b','c'};
     public static void main(String[] args) {
-        
+//        MyTest m = new MyTest();
+//        m.change(m.str,m.ch);
+//        System.out.print(m.str+"and");
+//        System.out.print(m.ch);
+
+        String s = "101,102,102,108";
+        String[] split = s.split(",");
+        HashSet<String> hs = new HashSet<>();
+        for (String ss:split){
+            hs.add(ss);
+        }
+        System.out.print(hs.toString());
+//        int ss = ss(2);
+//        System.out.print(ss);
     }
 
+    public void change(String str,char[] ch){
+        str ="test ok";
+        ch[0] = 'g';
+    }
+
+    public static int ss(int a){
+        int result = 0;
+        switch (a){
+            case 2:
+                result = result+a*2;
+        }
+        return result;
+    }
+
+
 }
+
 
 abstract class Ani {
     public String name;
@@ -82,7 +121,6 @@ class JumpCat extends CatTest implements Jump {
     public void jump() {
 
     }
-
 }
 
 
