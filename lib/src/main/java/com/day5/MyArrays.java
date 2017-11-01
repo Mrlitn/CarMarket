@@ -75,7 +75,3 @@ public class MyArrays {
     }
 
 }
-
-class P{
-    private String name;
-}

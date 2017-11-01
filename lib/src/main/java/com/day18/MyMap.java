@@ -13,7 +13,7 @@ import java.util.TreeMap;
  */
 
 public class MyMap {
-
+    
     public static void main(String args[]) {
         demo6();
     }
@@ -70,7 +70,7 @@ public class MyMap {
 
         Set<Map.Entry<Student, String>> entries = hm.entrySet();
         Iterator<Map.Entry<Student, String>> iterator1 = entries.iterator();
-        while (iterator1.hasNext()){
+        while (iterator1.hasNext()) {
             Map.Entry<Student, String> next = iterator1.next();
             Student key = next.getKey();
             String value = next.getValue();
@@ -80,13 +80,13 @@ public class MyMap {
 
         Set<Student> students = hm.keySet();
         Iterator<Student> iterator = students.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Student next = iterator.next();
             int age = next.getAge();
             String name = next.getName();
         }
 
-        for (Student s :hm.keySet()){
+        for (Student s : hm.keySet()) {
 
         }
 

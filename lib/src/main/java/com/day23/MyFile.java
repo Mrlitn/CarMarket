@@ -10,7 +10,6 @@ import java.io.File;
 public class MyFile {
 
     public static void main(String[] args) {
-//        demo();
 
     }
 

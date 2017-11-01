@@ -4,8 +4,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
-import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 /**
@@ -14,10 +12,8 @@ import android.widget.Toast;
 
 public class oneService extends Service {
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        System.out.print("onBind");
         return new ServiceBinder();
     }
 
@@ -49,6 +45,7 @@ public class oneService extends Service {
         public void iStop() {
             stop();
         }
+
     }
 
 }

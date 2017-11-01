@@ -16,12 +16,11 @@ public class MyArray3 {
         int[] i = new int[3];
         int[] i2 = new int[3];
 
-        String[] ss = {"d","a"};
+        String[] ss = {"d", "a"};
 
         i[0] = 10;
         i[1] = 20;
         i[2] = 30;
-
 
     }
 

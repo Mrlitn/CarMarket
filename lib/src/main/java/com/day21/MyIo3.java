@@ -20,7 +20,6 @@ public class MyIo3 {
         FileReader fr = new FileReader("a.txt");
         int len;
         int read = fr.read();
-
     }
 
     public static void demo1() throws IOException {

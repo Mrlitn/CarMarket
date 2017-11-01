@@ -79,6 +79,7 @@ public class MyHashSet2 {
         for (Integer i : hs) {
             System.out.println(i);
         }
+
     }
 
     public static void demo4(List<String> list) {

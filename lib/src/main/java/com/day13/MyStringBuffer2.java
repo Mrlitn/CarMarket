@@ -68,6 +68,7 @@ public class MyStringBuffer2 {
         //基本数据类型传递：不改变值
         //引用数据类型:改变
         //String虽然是引用数据类型，但是当作值传递  不改变值
+
     }
 
 }

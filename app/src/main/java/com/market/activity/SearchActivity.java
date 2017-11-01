@@ -2,7 +2,6 @@ package com.market.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import main.java.com.carmarket.R;
 
@@ -14,7 +13,7 @@ import main.java.com.carmarket.R;
 public class SearchActivity extends Activity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
 
